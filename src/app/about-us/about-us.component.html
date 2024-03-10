@@ -1,0 +1,21 @@
+
+<div class="container-imput">
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">LISTA DE TAREAS</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="message" rows="3"></textarea>
+  </div>
+  <button class="btn btn-primary" type="button" (click)="agregarTareas()">Agregar</button>
+</div>
+<div class="container-ul">
+  <ul *ngFor="let item of listaTareas; let i = index" class="ul-tarea">
+    <li>ID {{i}}: {{item}}</li>
+    <div>
+      <button type="button" class="btn btn-secondary" (click)="editarTarea(i, item)">Editar</button>
+      <button type="button" class="btn btn-secondary" (click)="eliminarTarea(i)">Eliminar</button>
+    </div>
+    <div *ngIf="modoEdicion === i">
+      <input type="text" class="form-controL" [(ngModel)]="listaTareas[i]" />
+      <button type="button" class="btn btn-primary" (click)="guardarEdicion(i)">Guardar</button>
+    </div>
+  </ul>
+</div>

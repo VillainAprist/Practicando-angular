@@ -1,0 +1,145 @@
+@import "https://unpkg.com/open-props"; 
+
+body {
+  display: flex;
+  width: 100vh;
+}
+
+header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  background: var(--grape-0);
+  background-color: rgb(234, 251, 251);
+}
+
+.hero {
+  padding: var(--size-10);
+  display: grid;
+  gap: var(--size-5);
+}
+
+.hero-message {
+  display: grid;
+  grid-template-columns: max-content;
+  color: var(--gray-9);
+  line-height: var(--font-lineheight-0);
+}
+
+.hero-message > div:last-child {
+  color: var(--indigo-7);
+}
+
+.under-hero {
+  color: var(--gray-7);
+  font-size: var(--font-size-4);
+  margin-block-end: var(--size-3);
+}
+
+.button-list {
+  display: flex;
+  gap: var(--size-3);
+}
+
+button {
+  background: white;
+  color: var(--indigo-8);
+  font-size: var(--font-size-3);
+  padding-inline: var(--size-8);
+  padding-block: var(--size-3);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
+}
+
+button.primary {
+  background: var(--indigo-8);
+  text-shadow: 0 1px 0 var(--indigo-9);
+  color: white;
+}
+
+button.primary:hover {
+  background: var(--indigo-7);
+}
+
+.promo-art {
+  align-self: stretch;
+}
+
+.promo-art > img {
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* AGREGADO */
+
+.texto-coleccion{
+  margin: 20px;
+  list-style:none;
+}
+
+.ul-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-eliminar{
+  margin: 10px;
+}
+
+.img-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+
+.image-put{
+  height: 800px;
+  width: 100%;
+}
+
+#input-button{
+  margin: 10px;
+}
+
+
+.container-imput{
+  display: flex;
+  margin: 100px;
+  justify-content: center;
+  align-items: center;    
+}
+
+button{
+  width: 100px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.form-label{
+  display: flex;
+  justify-content: center;
+}
+
+.mb-3{
+  min-width: 400px;
+}
+
+.container-ul{
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  align-items: center;
+}
+
+.ul-tarea{
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+}
+
+h2{
+  color:rgb(18, 83, 236);
+  opacity: 0.75;
+}

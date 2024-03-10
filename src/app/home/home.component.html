@@ -1,0 +1,36 @@
+<header>
+    <section class="hero">
+      <div class="container-imput">
+        <div class="mb-3">
+          <h2 for="exampleFormControlTextarea1" *ngIf="modoEdicion > -1 " class="form-label">EDITANDO EL ELEMENTO </h2>
+          <h2 for="exampleFormControlTextarea1" *ngIf="modoEdicion == -1" class="form-label">LISTA DE TAREAS</h2>
+          <hr class="border border-primary border-3 opacity-75">
+          <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="message" rows="3"></textarea>
+        </div>
+        <button *ngIf="modoEdicion == -1" class="btn btn-secondary btn-sm" id="input-button" type="button" (click)="agregarTareas()">Agregar</button>
+      </div>
+      <div class="container-ul">
+        <ul *ngFor="let item of listaTareas; let i = index" class="ul-tarea">
+          <li> {{item}}</li>
+          <div>
+            <button type="button" id="input-button" class="btn btn-success" (click)="editarTarea(i, item)">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="eliminarTarea(i)">Eliminar</button>
+          </div>
+          <div *ngIf="modoEdicion === i">
+            <button type="button" id="input-button" class="btn btn-success"  (click)="guardarEdicion(i)">Guardar</button>
+          </div>
+        </ul>
+      </div>
+    
+    <!-- IMAGEN -->
+    </section>
+    <div class="img-container">
+      <div class="input-group input-group-sm mb-3" >
+        <input [(ngModel)]="imageLink" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <button  (click)="guardarImagen()" type="button"  class="btn btn-secondary btn-sm" id="input-button" >image link</button>
+      </div>
+      <picture>
+        <img src= {{imageLinkGuardada}} appNoImage class="image-put">
+      </picture>
+    </div>
+  </header>

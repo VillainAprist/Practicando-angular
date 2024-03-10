@@ -1,0 +1,20 @@
+<div class="container">
+    <br>
+    <form  [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+        <div class="mb-3">
+            <label for="username" class="form-label">User</label>
+            <input [ngClass]="{'is-invalid': hasError('name','required') || hasError('name','minlength') }" 
+            type="text" class="form-control" id="username" formControlName="name">
+            <div class="text-danger" *ngIf="hasError('name','required')" >Please choose a username.</div>
+            <div class="text-danger" *ngIf="hasError('name','minlength')" >Username requires a min length 3 words</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input [ngClass]="{'is-invalid': hasError('email','required') || hasError('email','email') }" 
+            type="email" class="form-control" id="email" formControlName="email">
+            <div class="text-danger" *ngIf="hasError('email','email')" >Please put a correct email.</div>
+            <div class="text-danger" *ngIf="hasError('email','required')" >Please put your email.</div>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+</div>  
